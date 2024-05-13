@@ -1,7 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+)
+
+struct commands {
+
+}
 
 func main() {
-	fmt.Print("hello world")
+	// read input after cat until new line
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatalf("error reading instruction")
+		return
+	}
+	fmt.Print(input)
 }
